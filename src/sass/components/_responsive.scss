@@ -4,7 +4,16 @@
 
 //tablets
 @media (min-width: 768px) and (max-width: 1024px) {
-
+	.about__section__item {
+		padding: 0;
+		h2 {
+			font-size: 18px;
+			margin: 15px 0;
+		}
+		p {
+			font-size: 16px;
+		}
+	}
 }
 
 
@@ -83,6 +92,21 @@
 				a {
 					margin:0 20px;
 				}
+			}
+		}
+	}
+
+	.dropzone {
+		text-align: center;
+		&.dz-started .drop__section__load {
+			margin: 20px auto;
+			float: none;
+		}
+		.dz-preview {
+			margin: 20px 20px 30px;
+			&:after,
+			&:before {
+				display: none;
 			}
 		}
 	}

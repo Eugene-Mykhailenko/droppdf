@@ -16,6 +16,7 @@ $(document).ready(function () {
 		console.log('password');
 		$("form#callback__form input.js__password").attr("type", "password");
 	});
+
 });
 
 

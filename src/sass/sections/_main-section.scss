@@ -16,12 +16,6 @@
 			font-weight: 300;
 			color: $color-gray-darker;
 		}
-		h3 {
-			max-width: 700px;
-			margin: 0 auto 30px;
-			font-weight: 700;
-			color: $color-gray-dark;
-		}
 	}
 }
 
@@ -29,14 +23,91 @@
 .drop__section {
 
 }
+.before__add {
+	max-width: 700px;
+	color: #666;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 36px;
+
+}
+.after__add {
+	color: #424242;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 36px;
+	margin-bottom: 70px;
+}
+
+.drop__section__main {
+	h4 {
+		color: $color-primary;
+		font-size: 23px;
+		font-weight: 700;
+		line-height: 36px;
+		margin-bottom: 37px;
+	}
+	.upload__icons {
+		width: 170px;
+		margin: 40px auto;
+		img {
+			display: block;
+		}
+	}
+	.btn {
+		height: 40px;
+	}
+
+}
+.from__claud {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	clear: both;
+	span {
+		display: inline-block;
+		color: #666;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 36px;
+		margin-right: 15px;
+		vertical-align: middle;
+	}
+	a {
+		display: inline-block;
+		width: 85px;
+		height: 55px;
+		line-height: 75px;
+		border: 2px solid transparent;
+		border-radius: 5px;
+		vertical-align: middle;
+		@include transition(border-color 0.5s);
+		&:hover {
+			border-color: #ff8816;
+		}
+		img {
+			display: inline-block;
+
+		}
+	}
+}
+
 .drop__section__load {
+	display: none;
 	width: 340px;
+	float: right;
 	padding: 10px 25px 25px;
+	margin-bottom: 40px;
 	border: 1px dashed #ddd;
 	border-radius: 10px;
 	text-align: center;
 	h4 {
 		color: $color-primary;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 36px;
 		margin-bottom: 37px;
 		span {
 			display: inline-block;
@@ -51,6 +122,173 @@
 		}
 	}
 }
+.dropzone {
+	position: relative;
+	z-index: 1;
+	padding: 0 20px 80px;
+	text-align: right;
+	> .btn {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 250px;
+		margin: 0 auto;
+		display: none;
+		clear: both;
+	}
+	.before__add {
+		display: block;
+		text-align: center;
+	}
+	.after__add {
+		display: none;
+		text-align: center;
+	}
+	&.dz-started {
+		padding: 0 20px 50px;
+		.from__claud {
+			display: none;
+		}
+		.drop__section__load {
+			position: relative;
+			z-index: -1;
+			display: block;
+			margin-left: 25px;
+		}
+		> .btn {
+			display: block;
+		}
+		.before__add {
+			display: none;
+		}
+		.after__add {
+			display: block;
+		}
+	}
+	.dz-message {
+		padding: 20px 0 40px;
+		margin-bottom: 0;
+		border: 2px dashed #ddd;
+		border-radius: 10px;
+		//&.dz-default {
+		//	+ .dz-preview  {
+		//		background-color: green;
+		//		&:after {
+		//			right: -26px;
+		//		}
+		//		&:before {
+		//			right: -21px;
+		//		}
+		//	}
+		//}
+	}
+	.dz-preview {
+		position: relative;
+		width: 136px;
+		height: 190px;
+		margin-left: 0;
+		margin-right: 40px;
+		margin-bottom: 60px;
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			margin: auto;
+			background-color: #5488f3;
+		}
+		&:after {
+			top: 70px;
+			right: -26px;
+			width: 12px;
+			height: 2px;
+		}
+		&:before {
+			top: 65px;
+			right: -21px;
+			width: 2px;
+			height: 12px;
+		}
+		//&:last-child {
+		//	background-color: red;
+		//	&:after {
+		//		right: -12px;
+		//	}
+		//	&:before {
+		//		right: -7px;
+		//	}
+		//}
+
+		&.dz-file-preview {
+			.dz-image {
+				width: 90px;
+				height: 117px;
+				margin:0 auto 20px;
+				border-radius: 0;
+				background-image:url("../images/pdf-icon.png");
+				background-position: center;
+				background-size: cover;
+			}
+		}
+		.dz-details {
+			position: relative;
+			padding: 0;
+			.dz-size {
+				display: none;
+			}
+			.dz-filename {
+				overflow: visible;
+				white-space: normal;
+				word-wrap: break-word;
+				span {
+					padding: 0;
+					color: #444;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 24px;
+					border: none !important;
+				}
+			}
+		}
+		.dz-remove {
+			position: absolute;
+			top: 100px;
+			right: 0;
+			left: 85px;
+			z-index: 99;
+			width: 30px;
+			margin: auto;
+			height: 30px;
+			overflow: hidden;
+			background-color: #fd8183;
+			font-size: 20px;
+			line-height: 30px;
+			color: #fff;
+			border-radius: 30px;
+			opacity: 0;
+			text-decoration: none !important;
+			@include transition(opacity 0.5s);
+		}
+		&:hover {
+			.dz-remove {
+				opacity: 1;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+		&.dz-error .dz-error-message {
+			display: none;
+		}
+		.dz-success-mark,
+		.dz-error-mark {
+			display: none;
+		}
+	}
+}
+
+
+
 .drop__section__load__text {
 	margin-top: 35px;
 	color: $color-gray-dark;
