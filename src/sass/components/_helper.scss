@@ -1,0 +1,173 @@
+﻿/*------------------------------------------------------------------
+    helper classes
+-------------------------------------------------------------------*/
+
+//background colors
+.background__color {
+	&__white {
+		background-color: $color-white;
+	}
+	&__black {
+		background-color: $color-black;
+	}
+}
+
+
+//-----------------------------------
+//text aligment
+//-----------------------------------
+.text__center {
+	text-align: center;
+}
+.text__left {
+	text-align: left;
+}
+.text__right {
+	text-align: right;
+}
+// text colors
+.text__white {
+	color: $color-white;
+}
+
+
+//-----------------------------------
+// puling
+//-----------------------------------
+@media (min-width: $screen-sm-min) {
+	.pull__left__sm {
+		float: left !important;
+	}
+	.pull__right__sm {
+		float: right !important;
+	}
+}
+@media (min-width: $screen-md-min) {
+	.pull__left__md {
+		float: left !important;
+	}
+	.pull__right__md {
+		float: right !important;
+	}
+}
+@media (min-width: $screen-lg-min) {
+	.pull__left__lg {
+		float: left !important;
+	}
+	.pull__right__lg {
+		float: right !important;
+	}
+}
+
+
+
+//-----------------------------------
+//margin offset
+//-----------------------------------
+	.nomargin {
+		margin: 0 !important;
+	}
+	.nomargin__right {
+		margin-right: 0 !important;
+	}
+	.nomargin__left {
+		margin-left: 0 !important;
+	}
+	.nomargin__bottom {
+		margin-bottom: 0 !important;
+	}
+	.nomargin__top {
+		margin-top: 0 !important;
+	}
+	@for $i from 0 through 40 {
+		.margin__top__#{$i * 5} {
+			margin-top: $i*5+px !important;
+		}
+	}
+	@for $i from 0 through 40 {
+		.margin__bottom__#{$i * 5} {
+			margin-bottom: $i*5+px !important;
+		}
+	}
+	@for $i from 0 through 40 {
+		.margin__left__#{$i * 5} {
+			margin-left: $i*5+px !important;
+		}
+	}
+	@for $i from 0 through 40 {
+		.margin__right__#{$i * 5} {
+			margin-right: $i*5+px !important;
+		}
+	}
+
+@for $i from 0 through 40 {
+	.margin__top__-#{$i * 5} {
+		margin-top: -($i*5+px) !important;
+	}
+}
+@for $i from 0 through 40 {
+	.margin__bottom__-#{$i * 5} {
+		margin-bottom: -($i*5+px) !important;
+	}
+}
+@for $i from 0 through 40 {
+	.margin__left__-#{$i * 5} {
+		margin-left: -($i*5+px) !important;
+	}
+}
+@for $i from 0 through 40 {
+	.margin__right__-#{$i * 5} {
+		margin-right: -($i*5+px) !important;
+	}
+}
+
+//-----------------------------------
+//pading offset
+//-----------------------------------
+	.nopadding{
+		padding:0 !important;
+	}
+	.nopadding__right{
+		padding-right: 0 !important;
+	}
+	.nopadding__left {
+		padding-left: 0 !important;
+	}
+	.nopadding__top {
+		padding-top: 0 !important;
+	}
+	.nopadding__bottom {
+		padding-bottom: 0 !important;
+	}
+	@for $i from 0 through 40 {
+		.padding__top__#{$i * 5} {
+			padding-top: $i*5+px !important;
+		}
+	}
+	@for $i from 0 through 40 {
+		.padding__bottom__#{$i * 5} {
+			padding-bottom: $i*5+px !important;
+		}
+	}
+	@for $i from 0 through 40 {
+		.padding__left__#{$i * 5} {
+			padding-left: $i*5+px !important;
+		}
+	}
+	@for $i from 0 through 40 {
+		.padding__right__#{$i * 5} {
+			padding-right: $i*5+px !important;
+		}
+	}
+
+
+//-----------------------------------
+//shadows
+//-----------------------------------
+.--z__depth__0       {box-shadow: none !important;}
+.--z__depth__1       {box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);}
+.--z__depth__1__half {box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}
+.--z__depth__2       {box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.--z__depth__3       {box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);}
+.--z__depth__4       {box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);}
+.--z__depth__5       {box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);}

@@ -1,0 +1,136 @@
+//-------------------------------------------------
+// mixins
+//-------------------------------------------------
+@import "./bourbon/bourbon";
+
+
+// WebKit-style focus
+@mixin tab-focus() {
+    // Default
+    outline: none;
+    // WebKit
+    outline: 0 auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+
+
+// Button variants
+@mixin button-variant($btn-name,$color, $background, $border) {
+  #{$btn-name} {
+      color: $color;
+      background-color: $background;
+      border-color: $border;
+
+      &:focus,
+      &.focus {
+          color: $color;
+          background-color: darken($background, 10%);
+          border-color: darken($border, 10%);
+      }
+      &:hover {
+          color: $color;
+          background-color: darken($background, 10%);
+          border-color: darken($border, 10%);
+      }
+      &:active,
+      &.active {
+          color: $color;
+          background-color: darken($background, 10%);
+          border-color: darken($border, 10%);
+          &:hover,
+          &:focus,
+          &.focus {
+              color: $color;
+              background-color: darken($background, 17%);
+              border-color: darken($border, 17%);
+          }
+      }
+      &:active,
+      &.active {
+          background-image: none;
+      }
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+          &:hover,
+          &:focus,
+          &.focus {
+              background-color: $background;
+              border-color: $border;
+          }
+      }
+
+      &.btn--inverse {
+          color:  $background;
+          background-color: $color;
+          border-color: $border;
+
+
+		  &:focus,
+		  &.focus {
+			  color: $color;
+			  background-color: darken($background, 10%);
+			  border-color: darken($border, 10%);
+		  }
+		  &:hover {
+			  color: $color;
+			  background-color: $background;
+			  border-color: $border;
+		  }
+		  &:active,
+		  &.active {
+			  color: $color;
+			  background-color: darken($background, 10%);
+			  border-color: darken($border, 10%);
+			  &:hover,
+			  &:focus,
+			  &.focus {
+				  color: $color;
+				  background-color: darken($background, 17%);
+				  border-color: darken($border, 17%);
+			  }
+		  }
+		  &:active,
+		  &.active {
+			  background-image: none;
+		  }
+		  &.disabled,
+		  &[disabled],
+		  fieldset[disabled] & {
+			  &:hover,
+			  &:focus,
+			  &.focus {
+				  background-color: $background;
+				  border-color: $border;
+			  }
+		  }
+      }
+  }
+
+
+}
+// Button sizes
+@mixin button__size($button-height, $padding-horizontal, $font-size, $line-height, $border-radius, $btn-text-transform) {
+    padding:0 $padding-horizontal;
+    height: $button-height;
+    font-size: $font-size;
+    line-height: $line-height - ($btn-border * 2);
+    border-radius: $border-radius;
+	text-transform: $btn-text-transform;
+}
+// Button floating sizes
+@mixin btn__floating__size($btn-floating-size, $btn-floating-font-size) {
+    width: $btn-floating-size;
+	max-width: $btn-floating-size;
+    height: $btn-floating-size;
+    line-height: $btn-floating-size;
+    font-size: $btn-floating-font-size;
+	i,
+	.icon {
+		width: $btn-floating-size - ($btn-floating-border * 2);
+	}
+}
+
+
+

@@ -1,0 +1,89 @@
+/* =======================================================================
+	Responsive
+======================================================================= */
+
+//tablets
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+//mobile devices
+@media (max-width: 767px) {
+
+
+
+	.main__header__wrap {
+		display: block;
+		text-align: center;
+		padding-bottom: 1px;
+		.main__header__widget {
+			margin-bottom: 20px;
+			&--center {
+				margin: 0 auto 20px;
+				max-width: 200px;
+			}
+		}
+	}
+
+	.theme__section--main {
+		display: block;
+		min-height: auto;
+		.theme__section__wrap {
+			h1 {
+				font-size: 22px;
+				padding: 0 20px;
+				margin-bottom: 10px;
+			}
+			h3 {
+				padding: 0 20px;
+				margin-bottom: 20px;
+				font-size: 18px;
+			}
+		}
+	}
+
+
+	.about__section {
+		h1 {
+			margin: 20px 0 25px;
+			font-size: 22px;
+		}
+		.about__section__item {
+			h2 {
+				margin: 10px 0;
+				font-size: 18px;
+			}
+			p {
+				margin-bottom: 30px;
+				font-size: 16px;
+			}
+		}
+		.btn {
+			font-size: 13px;
+			margin: 20px 0;
+		}
+	}
+
+	.main__footer__wrap {
+		display: block;
+		text-align: center;
+		padding-bottom: 1px;
+		padding-top: 20px;
+		margin-bottom: 20px;
+		.main__footer__widget {
+			margin-bottom: 20px;
+			.main__footer__copyright {
+				text-align: left;
+				padding: 0 20px;
+				line-height: 20px;
+			}
+			.main__footer__social {
+				text-align: center;
+				a {
+					margin:0 20px;
+				}
+			}
+		}
+	}
+}

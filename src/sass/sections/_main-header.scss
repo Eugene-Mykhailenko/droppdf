@@ -1,0 +1,40 @@
+/* =======================================================================
+	main header styles
+======================================================================= */
+.main__header {
+	//position: fixed;
+	//top: 0;
+	//left: 0;
+	//right: 0;
+	//width: 100vw;
+	background-color: $color-white;
+	//z-index: 999;
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1210px;
+		padding:15px 0;
+		margin: 0 auto;
+	}
+}
+.main__header__widget {
+	&--left {
+		.main__header__tell {
+			color: $dark-blue;
+			font-size: 26px;
+			letter-spacing: 1.5px;
+			font-weight: 900;
+			i {
+				margin-right: 10px;
+				color: $light-blue;
+			}
+		}
+	}
+	&--center {
+
+	}
+	&--right {
+
+	}
+}

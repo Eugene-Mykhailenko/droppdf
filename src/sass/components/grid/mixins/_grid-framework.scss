@@ -1,0 +1,77 @@
+
+
+@mixin make__grid__columns($i: 1, $list: ".col__xs__#{$i}, .col__sm__#{$i}, .col__md__#{$i}, .col__lg__#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col__xs__#{$i}, .col__sm__#{$i}, .col__md__#{$i}, .col__lg__#{$i}";
+  }
+  #{$list} {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+  }
+}
+
+
+
+@mixin float__grid__columns($class, $i: 1, $list: ".col__#{$class}__#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col__#{$class}__#{$i}";
+  }
+  #{$list} {
+    float: left;
+  }
+}
+
+
+@mixin calc__grid__column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col__#{$class}__#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .col-#{$class}__push__#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .col__#{$class}__push__0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .col__#{$class}__pull__#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .col__#{$class}__pull__0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .col__#{$class}__offset__#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop__grid__columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc__grid__column($i, $class, $type);
+  }
+}
+
+
+// Create grid for specific class
+@mixin make__grid($class) {
+  @include float__grid__columns($class);
+  @include loop__grid__columns($grid-columns, $class, width);
+  @include loop__grid__columns($grid-columns, $class, pull);
+  @include loop__grid__columns($grid-columns, $class, push);
+  @include loop__grid__columns($grid-columns, $class, offset);
+}

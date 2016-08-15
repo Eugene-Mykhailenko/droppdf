@@ -1,0 +1,41 @@
+/* =======================================================================
+	about section
+======================================================================= */
+.about__section {
+	background-color: #fafafa;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	h1 {
+		margin:70px 0 75px;
+		color: $color-gray-dark;
+		font-weight: 300;
+	}
+	.btn {
+		margin-top: 65px;
+		margin-bottom: 80px;
+	}
+}
+
+.about__section__item {
+	padding: 0 20px;
+	h2 {
+		margin-bottom: 35px;
+	}
+	p {
+		color: $color-gray;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 28px;
+		text-align: left;
+	}
+}
+
+.about__section__item__icon {
+	height: 120px;
+	text-align: center;
+	@include display(flex);
+	img {
+		display: block;
+		margin: auto;
+	}
+}

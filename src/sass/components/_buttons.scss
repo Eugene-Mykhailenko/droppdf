@@ -1,0 +1,91 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    height: $btn-height;
+	padding: $btn-padding;
+    margin-bottom: 0;
+    color: $btn-default-color;
+	line-height: $btn-height - ($btn-border * 2);
+    font-weight: $btn-font-weight;
+    text-align: center;
+	letter-spacing: 1px;
+    vertical-align: middle;
+    border: $btn-border solid $btn-border-color;
+    border-radius: $btn-border-radius;
+	@include linear-gradient(to top, #e0e0e0 0%, white 100%);
+    white-space: nowrap;
+	text-transform: $btn-text-transform;
+    cursor: pointer;
+    outline: none !important;
+    touch-action: manipulation;
+    @include transition(0.3s);
+
+    &:hover {
+        @extend .--z__depth__1__half;
+    }
+
+	// Button Sizes
+	// --------------------------------------------------
+	&--lg {
+		@include button__size($btn-lg-button-height, $btn-lg-padding-horizontal, $btn-lg-font-size, $btn-lg-line-height, $btn-lg-border-radius, $btn-lg-text-transform);
+	}
+	&--sm {
+		@include button__size($btn-sm-button-height, $btn-sm-padding-horizontal, $btn-sm-font-size, $btn-sm-line-height, $btn-sm-border-radius, $btn-sm-text-transform);
+	}
+	&--xs {
+		@include button__size($btn-xs-button-height, $btn-xs-padding-horizontal, $btn-xs-font-size, $btn-xs-line-height, $btn-xs-border-radius, $btn-xs-text-transform);
+	}
+
+}
+
+
+
+
+
+
+// Button colors
+// --------------------------------------------------
+.btn--warning {
+	color: $color-white;
+	border:$btn-lg-border;
+	@include linear-gradient(to top, $color-warning 0%, $color-warning-light 100%);
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+	}
+}
+
+.btn--small--radius {
+	border-radius: 3px;
+}
+
+
+// Block button
+// --------------------------------------------------
+.btn--block {
+	display: block;
+	width: 100%;
+}
+// Vertically space out multiple block buttons
+.btn--block + .btn--block {
+	margin-top: 5px;
+}
+
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+
+

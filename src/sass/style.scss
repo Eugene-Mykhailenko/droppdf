@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+
+// Core variables and mixins
+@import "components/variables";
+@import "components/mixins";
+
+
+// Reset
+@import "components/normalize";
+
+
+// Core CSS
+@import "components/global";
+@import "components/typography";
+@import "components/helper.scss";
+
+
+// Components
+@import "components/grid/grid.scss";
+@import "components/buttons";
+@import "components/icons/theme-icons";
+@import "components/modal";
+
+//sections
+@import "sections/main-header.scss";
+@import "sections/main-section.scss";
+@import "sections/about-section.scss";
+@import "sections/main-footer.scss";
+
+
+
+//Responsive
+@import "components/responsive.scss";

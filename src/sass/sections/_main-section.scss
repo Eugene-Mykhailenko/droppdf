@@ -1,0 +1,60 @@
+/* =======================================================================
+	main section
+======================================================================= */
+.theme__section--main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	min-height: calc(100vh);
+	padding-bottom: 52px;
+	.theme__section__wrap {
+		margin: auto;
+		h1 {
+			margin-bottom: 20px;
+			font-weight: 300;
+			color: $color-gray-darker;
+		}
+		h3 {
+			max-width: 700px;
+			margin: 0 auto 30px;
+			font-weight: 700;
+			color: $color-gray-dark;
+		}
+	}
+}
+
+
+.drop__section {
+
+}
+.drop__section__load {
+	width: 340px;
+	padding: 10px 25px 25px;
+	border: 1px dashed #ddd;
+	border-radius: 10px;
+	text-align: center;
+	h4 {
+		color: $color-primary;
+		margin-bottom: 37px;
+		span {
+			display: inline-block;
+			padding: 0 12px;
+			margin-left: 16px;
+			color: $color-white;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 25px;
+			background-color: $color-primary-light;
+			border-radius: 12px;
+		}
+	}
+}
+.drop__section__load__text {
+	margin-top: 35px;
+	color: $color-gray-dark;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+}
