@@ -37,7 +37,7 @@
 
 	.theme__section--main {
 		display: block;
-		min-height: auto;
+		min-height: 10%;
 		.theme__section__wrap {
 			h1 {
 				font-size: 22px;
@@ -71,6 +71,7 @@
 		.btn {
 			font-size: 13px;
 			margin: 20px 0;
+			padding: 0 20px !important;
 		}
 	}
 
@@ -95,18 +96,70 @@
 			}
 		}
 	}
+	.drop__section__main h4 {
+		padding:0 20px;
+	}
+	.from__claud span {
+		display: block;
+	}
 
 	.dropzone {
 		text-align: center;
-		&.dz-started .drop__section__load {
-			margin: 20px auto;
-			float: none;
+		padding: 0 20px 100px;
+		&.dz-started {
+			padding: 0 20px 50px;
+			.drop__section__load {
+				margin: 20px auto;
+				width: 100%;
+			}
 		}
 		.dz-preview {
 			margin: 20px 20px 30px;
 			&:after,
 			&:before {
 				display: none;
+			}
+		}
+	}
+
+
+	.modal__container {
+		&__wrap {
+			display: block;
+			width: calc(100% - 20px);
+			max-height: 90vh;
+			overflow: auto;
+			.btn__close {
+				top: 10px;
+				right: 10px;
+				&:after,
+				&:before {
+					background-color: #222;
+				}
+			}
+			.modal__social .btn {
+				font-size: 10px;
+			}
+			&__col {
+				display: block;
+				&--left {
+					width: 100%;
+					padding: 15px;
+				}
+				&--right {
+					display: block;
+					width: 100%;
+					background: #fff;
+					text-align: center;
+					.modal__text {
+						padding: 0 20px;
+						color: #666;
+					}
+					.btn {
+						display: inline-block;
+						margin-bottom: 20px;
+					}
+				}
 			}
 		}
 	}
